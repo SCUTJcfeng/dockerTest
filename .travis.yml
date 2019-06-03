@@ -1,0 +1,16 @@
+language: python
+python:
+  - 3.6.4
+env:
+  - docker_name=docker-test
+services:
+  - docker
+install:
+  - docker build -t $docker_name .
+  - docker run -d -p 80:3000
+before_script:
+  - pip install pytest
+  - pip install requests
+script:
+  - docker ps | grep -q $docker_name
+  - pytest test.py
