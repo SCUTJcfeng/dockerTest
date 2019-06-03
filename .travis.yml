@@ -7,7 +7,7 @@ services:
   - docker
 install:
   - docker build -t $docker_name .
-  - docker run $docker_name -d -p 80:3000
+  - docker run -d -p 5000:5000 $docker_name
 before_script:
   - pip install pytest
   - pip install requests
