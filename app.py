@@ -4,7 +4,7 @@
 Project: dockerTest
 Author: jc feng (jcfeng2013@gmail.com)
 File Created: 2019-06-03 11:04:45
-Last Modified: 2019-06-03 11:48:24
+Last Modified: 2019-06-03 13:25:41
 '''
 
 from flask import Flask
@@ -18,4 +18,4 @@ def hello():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
