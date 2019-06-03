@@ -1,8 +1,8 @@
-version: '2.1'
+version: "2.1"
 
 services:
   dockertest:
     image: dockertest
     build: .
     ports:
-      - 3000:3000
+      - 3000:5000

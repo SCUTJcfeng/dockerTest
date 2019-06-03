@@ -6,7 +6,7 @@
 FROM python:3.6.4-alpine
 
 LABEL Name=dockertest Version=0.0.1
-EXPOSE 3000
+EXPOSE 5000
 
 WORKDIR /app
 ADD . /app
