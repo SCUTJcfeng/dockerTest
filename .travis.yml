@@ -1,8 +1,6 @@
 language: python
 python:
   - 3.6.4
-env:
-  - docker_name=docker-test
 install:
   - docker-compose up -d
 before_script:

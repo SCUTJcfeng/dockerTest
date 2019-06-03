@@ -2,20 +2,20 @@ version: "3"
 
 services:
   dockertest:
-    image: dockertest
-    build: ./app
+    image: docker_test
+    build:
+      context: .
+      dockerfile: ./app/Dockerfile
     ports:
       - 5000:5000
     networks:
       - my-bridge
   redis:
-    image: redis
-    build: ./redis
+    image: my_redis
+    build:
+      context: ./redis
     volumes:
-      - ./redis/redis.conf:/etc/redis.conf
       - ./redis/redis_data:/data
-    command:
-      - redis-server
     networks:
       - my-bridge
 
