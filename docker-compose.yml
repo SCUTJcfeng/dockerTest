@@ -3,23 +3,21 @@ version: "3"
 services:
   dockertest:
     image: dockertest
-    build: .
+    build: ./app
     ports:
       - 5000:5000
-    # depends_on:
-    # - redis
     networks:
       - my-bridge
-
   redis:
     image: redis
+    build: ./redis
     volumes:
-      - redis-data:/var/data
+      - ./redis/redis.conf:/etc/redis.conf
+      - ./redis/redis_data:/data
+    command:
+      - redis-server
     networks:
       - my-bridge
-
-volumes:
-  redis-data:
 
 networks:
   my-bridge:

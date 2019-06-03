@@ -4,11 +4,9 @@ python:
 env:
   - docker_name=docker-test
 install:
-  - docker build -t $docker_name .
-  - docker run -d -p 5000:5000 $docker_name
+  - docker-compose up -d
 before_script:
-  - pip install pytest
-  - pip install requests
+  - pip install pytest, requests
 script:
-  - docker ps | grep -q $docker_name
+  - docker-compose ps
   - pytest test.py
