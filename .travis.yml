@@ -6,7 +6,7 @@ env:
 install:
   - docker-compose up -d
 before_script:
-  - pip install pytest, requests
+  - pip install pytest requests
 script:
   - docker-compose ps
   - pytest test.py
