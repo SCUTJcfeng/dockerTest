@@ -4,17 +4,10 @@
 Project: dockerTest
 Author: jc feng (jcfeng2013@gmail.com)
 File Created: 2019-06-03 11:04:45
-Last Modified: 2019-06-03 13:25:41
+Last Modified: 2019-06-03 13:53:16
 '''
 
-from flask import Flask
-
-app = Flask(__name__)
-
-
-@app.route('/')
-def hello():
-    return 'hello docker'
+from app import app
 
 
 if __name__ == "__main__":
